@@ -30,11 +30,17 @@ public: //외부에서 접근할 수 있도록 허용하는 변수
 	string getName() const { return name; }
 	void setName(const string& n) { name = n; }
 
+	double getMidterm() const { return midterm; }
+	double getFinal() const { return final; }
+	vector<double>& getHomework() { return homework; }
+
 	bool valid() const { return !homework.empty(); }
 
 	//9.2.1/254p에서 정의한 함수들
 	istream& read(istream&);
 	double grade() const;
+
+	const vector<double>& getHomework() const { return homework; }
 };//세미콜론을 잊지 않도록 주의
 
 //전역 함수 정의
